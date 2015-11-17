@@ -17,9 +17,9 @@ cosineOmega = 0.2; %angular speed of cosine [rad/s]
 cosinePhase = 60; %phase shift of cosine [deg]
 
 %input type selection - step, pulse, cosine
-%u = generateStep(steps, amplitude, 10/T_p);
+u = generateStep(steps, amplitude, 10/T_p);
 %u = generatePulse(steps, amplitude, 10/T_p, 1/T_p);
-u = generateCosine(steps, amplitude, cosineOmega, 2*pi*cosinePhase/360, T_p);
+%u = generateCosine(steps, amplitude, cosineOmega, 2*pi*cosinePhase/360, T_p);
 
 
 
@@ -49,8 +49,8 @@ elseif((size(y)(2)) < steps)
 end
 
 plot(t*T_p, u,':', 'LineWidth', 2, t*T_p, y, 'LineWidth', 2);
-title('System response - sinusoidal input, w=0.2rad/s', 'FontSize', 20);
-%title('System response - step input', 'FontSize', 20);
+%title('System response - sinusoidal input, w=0.2rad/s', 'FontSize', 20);
+title('System response - step input', 'FontSize', 20);
 xlabel('t[s]', 'FontSize', 20);
 plotLegend = legend('u', 'y');
 set(plotLegend, 'FontSize', 20);
